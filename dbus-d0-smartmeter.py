@@ -2,7 +2,6 @@
  
 # import normal packages
 import logging
-from logging.handlers import RotatingFileHandler
 import sys
 import os
 import platform
@@ -424,12 +423,7 @@ def main():
   logging.basicConfig(      format='%(asctime)s,%(msecs)d %(name)s %(levelname)s %(message)s',
                             datefmt='%Y-%m-%d %H:%M:%S',
                             #level=logging.DEBUG,
-                            level=config['DEFAULT']['Logging'],
-                            handlers=[
-                                #logging.FileHandler("%s/current.log" % (os.path.dirname(os.path.realpath(__file__)))),
-                                RotatingFileHandler('%s/current.log' % (os.path.dirname(os.path.realpath(__file__))), maxBytes=1000000, backupCount=3),
-                                logging.StreamHandler()
-                            ])
+                            level=config['DEFAULT']['Logging'])
  
   try:
       logging.info("Starting...");

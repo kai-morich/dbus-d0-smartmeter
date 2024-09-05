@@ -43,7 +43,7 @@ You have to edit `config.ini`. Please note the comments there as explanation!
 
 | Config value        | Explanation   |
 |-------------------- | ------------- |
-| Logging | set loglevel for `current.log` respectivly `/var/log/dbus-d0-smartmeter/current.log`. Possible values among others are `DEBUG`, `INFO`, `WARING` |
+| Logging | set loglevel for `/var/log/dbus-d0-smartmeter/current`. Possible values among others are `DEBUG`, `INFO`, `WARING` |
 | SignOfLiveLog | if >0, interval in minutes to give stats (= number of received correct SML-data) |
 | CustomName | user-friendly name for the gridmeter within the Venus web-GUI |
 | TimeoutInterval | if no valid data is received within this millisencods-interval, the DBUS-service-property Connected will be set to 0 |
@@ -71,7 +71,7 @@ You do not have to modify serial-starter.rules beause `service/run` stops the co
 
 If you have good luck, just run `install.sh` and the gridmeter appears within the Venus-GUI.
 
-`current.log` will look like this:
+`/var/log/dbus-d0-smartmeter/current` will look like this:
 
 ````
 2023-05-31 19:13:16,534 root INFO Starting...
